@@ -65,7 +65,7 @@ const Stats = () => {
     };
 
     return (
-        <section ref={statsRef} className="py-20 bg-primary text-white relative overflow-hidden">
+        <section ref={statsRef} className="py-12 sm:py-16 lg:py-20 bg-primary text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
@@ -73,28 +73,28 @@ const Stats = () => {
             </div>
 
             <div className="max-w-[1140px] mx-auto px-4 relative z-10">
-                <div className="text-center mb-12">
-                    <h2 className="font-heading text-4xl mb-4" style={{ fontFamily: 'Noto Serif, serif' }}>
+                <div className="text-center mb-8 sm:mb-12">
+                    <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4" style={{ fontFamily: 'Noto Serif, serif' }}>
                         Our Achievements in Numbers
                     </h2>
-                    <p className="text-white/90" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '16px' }}>
+                    <p className="text-white/90 text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
                         Building excellence through dedication and commitment
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                     {stats.map((stat, index) => (
                         <div
                             key={index}
-                            className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-all duration-300 hover:scale-105 group"
+                            className="text-center p-4 sm:p-6 lg:p-8 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-all duration-300 hover:scale-105 group"
                         >
-                            <div className="text-5xl mb-4 text-gold group-hover:scale-110 transition-transform duration-300">
+                            <div className="text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-4 text-gold group-hover:scale-110 transition-transform duration-300">
                                 <FontAwesomeIcon icon={stat.icon} />
                             </div>
-                            <div className="text-5xl font-bold mb-2 text-gold" style={{ fontFamily: 'Noto Serif, serif' }}>
+                            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-1 sm:mb-2 text-gold" style={{ fontFamily: 'Noto Serif, serif' }}>
                                 <AnimatedNumber target={stat.number} suffix={stat.suffix} />
                             </div>
-                            <div className="text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            <div className="text-xs sm:text-sm lg:text-lg" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                 {stat.label}
                             </div>
                         </div>

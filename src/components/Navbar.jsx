@@ -20,26 +20,27 @@ const Navbar = () => {
         <header className="w-full sticky top-0 z-50">
             {/* Top Bar - Green background */}
             <div className="bg-primary text-white py-2">
-                <div className="max-w-[1140px] mx-auto px-4 flex justify-between items-center text-sm">
-                    <div className="flex items-center gap-6">
-                        <span className="flex items-center gap-2">
-                            <FontAwesomeIcon icon={faPhone} />
-                            123456789
+                <div className="max-w-[1140px] mx-auto px-4 flex justify-between items-center text-xs sm:text-sm">
+                    <div className="flex items-center gap-2 sm:gap-6">
+                        <span className="flex items-center gap-1 sm:gap-2">
+                            <FontAwesomeIcon icon={faPhone} className="text-xs sm:text-sm" />
+                            <span className="hidden xs:inline">123456789</span>
+                            <span className="xs:hidden">1234567</span>
                         </span>
-                        <span className="flex items-center gap-2">
+                        <span className="hidden md:flex items-center gap-2">
                             <FontAwesomeIcon icon={faEnvelope} />
                             info@adityahighschool.com
                         </span>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 sm:gap-4">
                         <a href="#" className="hover:text-gold transition-colors flex items-center gap-1">
-                            <FontAwesomeIcon icon={faFacebookF} />
+                            <FontAwesomeIcon icon={faFacebookF} className="text-xs sm:text-sm" />
                         </a>
                         <a href="#" className="hover:text-gold transition-colors flex items-center gap-1">
-                            <FontAwesomeIcon icon={faInstagram} />
+                            <FontAwesomeIcon icon={faInstagram} className="text-xs sm:text-sm" />
                         </a>
                         <a href="#" className="hover:text-gold transition-colors flex items-center gap-1">
-                            <FontAwesomeIcon icon={faYoutube} />
+                            <FontAwesomeIcon icon={faYoutube} className="text-xs sm:text-sm" />
                         </a>
                     </div>
                 </div>
@@ -49,15 +50,15 @@ const Navbar = () => {
             <div className="bg-white shadow-md">
                 <div className="max-w-[1140px] mx-auto px-4 py-4 flex justify-between items-center">
                     {/* Logo Section - Left Side */}
-                    <div className="flex items-center gap-3">
-                        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm overflow-hidden">
-                            <span className="text-center leading-tight px-1" style={{ fontSize: '10px' }}>AHS</span>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm overflow-hidden">
+                            <span className="text-center leading-tight px-1" style={{ fontSize: '8px' }}>AHS</span>
                         </div>
                         <div>
-                            <div className="font-heading font-bold text-primary text-lg leading-tight">
+                            <div className="font-heading font-bold text-primary text-sm sm:text-base md:text-lg leading-tight">
                                 Aditya High School
                             </div>
-                            <div className="text-xs text-gray-600">Proddatur</div>
+                            <div className="text-[10px] sm:text-xs text-gray-600">Proddatur</div>
                         </div>
                     </div>
 

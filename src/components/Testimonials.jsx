@@ -26,35 +26,35 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
             <div className="max-w-[1140px] mx-auto px-4">
-                <div className="text-center mb-16">
-                    <h3 className="text-gold text-sm font-semibold uppercase tracking-wide mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+                    <h3 className="text-gold text-xs sm:text-sm font-semibold uppercase tracking-wide mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
                         Testimonials
                     </h3>
-                    <h2 className="font-heading text-4xl text-primary mb-4" style={{ fontFamily: 'Noto Serif, serif' }}>
+                    <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-primary mb-3 sm:mb-4" style={{ fontFamily: 'Noto Serif, serif' }}>
                         What Parents Say About Us
                     </h2>
-                    <p className="text-gray-600" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '16px' }}>
+                    <p className="text-gray-600 text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
                         Hear from our community of satisfied parents
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className="bg-cream p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative"
+                            className="bg-cream p-6 sm:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative"
                         >
                             {/* Quote Icon */}
-                            <div className="text-6xl text-gold/20 absolute top-4 right-4" style={{ fontFamily: 'Georgia, serif' }}>
+                            <div className="text-4xl sm:text-5xl lg:text-6xl text-gold/20 absolute top-3 sm:top-4 right-3 sm:right-4" style={{ fontFamily: 'Georgia, serif' }}>
                                 "
                             </div>
 
                             <div className="relative z-10">
                                 {/* Profile Image */}
-                                <div className="mb-6 flex justify-center">
-                                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+                                <div className="mb-4 sm:mb-6 flex justify-center">
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-3 sm:border-4 border-primary shadow-lg">
                                         <img
                                             src={testimonial.image}
                                             alt={testimonial.name}
@@ -63,14 +63,14 @@ const Testimonials = () => {
                                     </div>
                                 </div>
 
-                                <p className="text-gray-700 mb-6 leading-relaxed italic" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '15px' }}>
+                                <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed italic text-sm sm:text-[15px]" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                     "{testimonial.text}"
                                 </p>
                                 <div className="text-center">
-                                    <h4 className="font-semibold text-primary text-lg" style={{ fontFamily: 'Noto Serif, serif' }}>
+                                    <h4 className="font-semibold text-primary text-base sm:text-lg" style={{ fontFamily: 'Noto Serif, serif' }}>
                                         {testimonial.name}
                                     </h4>
-                                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    <p className="text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                         {testimonial.role}
                                     </p>
                                 </div>

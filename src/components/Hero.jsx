@@ -20,7 +20,7 @@ const Hero = () => {
     }, [slides.length]);
 
     return (
-        <div className="relative w-full h-[600px] overflow-hidden">
+        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
             {/* Background Images with slider and zoom effect */}
             {slides.map((slide, index) => (
                 <div
@@ -40,13 +40,13 @@ const Hero = () => {
             ))}
 
             {/* Slide Indicators */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+            <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 sm:gap-3">
                 {slides.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => setCurrentSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                            ? 'bg-gold w-8'
+                        className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                            ? 'bg-gold w-6 sm:w-8'
                             : 'bg-white/50 hover:bg-white/80'
                             }`}
                         aria-label={`Go to slide ${index + 1}`}
@@ -57,23 +57,23 @@ const Hero = () => {
             {/* Content */}
             <div className="relative z-10 max-w-[1140px] mx-auto px-4 h-full flex flex-col justify-center text-white">
                 <h1
-                    className="font-heading text-[85px] leading-tight mb-6 animate-fade-in"
+                    className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-4 sm:mb-6 animate-fade-in"
                     style={{ fontFamily: 'Noto Serif, serif', fontWeight: 400 }}
                 >
                     Welcome to Aditya High School
                 </h1>
                 <p
-                    className="text-[18px] mb-8 max-w-2xl font-light leading-relaxed"
+                    className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl font-light leading-relaxed"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
                     Aditya High School is a CBSE day cum boarding K-12 school established by the region's leaders
                     in the education arena known for being the frontrunners in the technical education sector.
                 </p>
-                <div className="flex gap-4">
-                    <button className="bg-transparent border-2 border-primary text-white px-6 py-3 rounded text-[15px] font-medium hover:bg-primary transition-all">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <button className="bg-transparent border-2 border-primary text-white px-6 py-3 rounded text-sm sm:text-[15px] font-medium hover:bg-primary transition-all">
                         ABOUT US
                     </button>
-                    <button className="bg-gold text-white px-6 py-3 rounded text-[15px] font-medium hover:bg-yellow-500 transition-all">
+                    <button className="bg-gold text-white px-6 py-3 rounded text-sm sm:text-[15px] font-medium hover:bg-yellow-500 transition-all">
                         ADMISSIONS
                     </button>
                 </div>
