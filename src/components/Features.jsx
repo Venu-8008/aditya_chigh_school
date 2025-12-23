@@ -35,7 +35,7 @@ const Features = () => {
                                 About Aditya High School
                             </h3>
                             <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-primary mb-4 sm:mb-6 font-normal" style={{ fontFamily: 'Noto Serif, serif' }}>
-                                Whats Makes Aditya High School Unique
+                                What Makes Aditya High School Unique
                             </h2>
                             <p className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                 Aditya High School is a premier educational institution

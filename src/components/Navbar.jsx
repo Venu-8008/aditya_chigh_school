@@ -13,7 +13,7 @@ const Navbar = () => {
         { label: 'About Us', href: '/about' },
         { label: 'Admissions', href: '#admissions' },
         { label: 'Academics', href: '#academics' },
-        { label: 'Achievements', href: '#achievements' },
+        { label: 'Achievements', href: '/achievements' },
         { label: 'Contact', href: '#contact' },
     ];
 
