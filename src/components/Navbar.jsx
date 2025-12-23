@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PillNav from './PillNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -8,8 +9,8 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
-        { label: 'Home', href: '#' },
-        { label: 'About Us', href: '#about' },
+        { label: 'Home', href: '/' },
+        { label: 'About Us', href: '/about' },
         { label: 'Admissions', href: '#admissions' },
         { label: 'Academics', href: '#academics' },
         { label: 'Achievements', href: '#achievements' },
@@ -97,14 +98,14 @@ const Navbar = () => {
                     <div className="lg:hidden bg-white border-t border-gray-100 py-4">
                         <div className="flex flex-col space-y-4 px-4">
                             {navItems.map((link) => (
-                                <a
+                                <Link
                                     key={link.label}
-                                    href={link.href}
+                                    to={link.href}
                                     className="text-gold hover:text-primary transition-colors font-medium"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.label}
-                                </a>
+                                </Link>
                             ))}
                             <button className="bg-gold text-white px-6 py-2 rounded font-medium hover:bg-yellow-500 transition-colors w-full">
                                 Staff/Parents Login

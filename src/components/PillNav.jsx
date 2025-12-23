@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './PillNav.css';
 
@@ -213,9 +214,9 @@ const PillNav = ({
         <div className="pill-nav-container">
             <nav className={`pill-nav ${className}`} aria-label="Primary" style={cssVars}>
                 {!hideLogo && (
-                    <a
+                    <Link
                         className="pill-logo"
-                        href="#"
+                        to="/"
                         aria-label="Home"
                         onMouseEnter={handleLogoEnter}
                         ref={el => {
@@ -223,16 +224,16 @@ const PillNav = ({
                         }}
                     >
                         {logo}
-                    </a>
+                    </Link>
                 )}
 
                 <div className="pill-nav-items desktop-only" ref={navItemsRef}>
                     <ul className="pill-list" role="menubar">
                         {items.map((item, i) => (
                             <li key={item.href || `item-${i}`} role="none">
-                                <a
+                                <Link
                                     role="menuitem"
-                                    href={item.href}
+                                    to={item.href}
                                     className={`pill${activeHref === item.href ? ' is-active' : ''}`}
                                     aria-label={item.ariaLabel || item.label}
                                     onMouseEnter={() => handleEnter(i)}
@@ -251,7 +252,7 @@ const PillNav = ({
                                             {item.label}
                                         </span>
                                     </span>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -272,13 +273,13 @@ const PillNav = ({
                 <ul className="mobile-menu-list">
                     {items.map((item, i) => (
                         <li key={item.href || `mobile-item-${i}`}>
-                            <a
-                                href={item.href}
+                            <Link
+                                to={item.href}
                                 className={`mobile-menu-link${activeHref === item.href ? ' is-active' : ''}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

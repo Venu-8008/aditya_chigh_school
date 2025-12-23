@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Stats from './components/Stats';
-import Gallery from './components/Gallery';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
-
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -23,22 +19,20 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
 
       <div className={`min-h-screen flex flex-col ${showPreloader ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}>
         <Navbar />
         <main className="flex-grow">
-          <Hero />
-          <Features />
-          <Stats />
-          <Gallery />
-          <Testimonials />
-          <CTA />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
         </main>
         <Footer />
       </div>
-    </>
+    </Router>
   );
 }
 
