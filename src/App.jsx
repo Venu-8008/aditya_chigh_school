@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import About from './pages/About';
 import Achievements from './pages/Achievements';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
@@ -27,6 +28,7 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/achievements" element={<Achievements />} />
           </Routes>
         </main>
