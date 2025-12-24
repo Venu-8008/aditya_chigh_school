@@ -7,6 +7,7 @@ import Academics from './pages/Academics';
 import Achievements from './pages/Achievements';
 import Contact from './pages/Contact';
 import Media from './pages/Media';
+import Admissions from './pages/Admissions';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/academics" element={<Academics />} />
+            <Route path="/admissions" element={<Admissions />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/media" element={<Media />} />
