@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faLinkedinIn, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -36,12 +37,13 @@ const Footer = () => {
                             Quick Links
                         </h3>
                         <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                            <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Home</a></li>
-                            <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">About Us</a></li>
+                            <li><Link to="/" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Home</Link></li>
+                            <li><Link to="/about" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">About Us</Link></li>
                             <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Admissions</a></li>
                             <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Academics</a></li>
                             <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Facilities</a></li>
-                            <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Contact Us</a></li>
+                            <li><Link to="/media" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Media</Link></li>
+                            <li><Link to="/contact" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Contact Us</Link></li>
                         </ul>
                     </div>
 
@@ -55,7 +57,7 @@ const Footer = () => {
                             <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Teaching Methodology</a></li>
                             <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Examination System</a></li>
                             <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Results</a></li>
-                            <li><a href="#" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Achievements</a></li>
+                            <li><Link to="/achievements" className="hover:text-gold transition-colors opacity-90 hover:opacity-100">Achievements</Link></li>
                         </ul>
                     </div>
 

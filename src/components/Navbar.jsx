@@ -14,7 +14,8 @@ const Navbar = () => {
         { label: 'Admissions', href: '#admissions' },
         { label: 'Academics', href: '#academics' },
         { label: 'Achievements', href: '/achievements' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'Media', href: '/media' },
+        { label: 'Contact', href: '/contact' },
     ];
 
     return (
