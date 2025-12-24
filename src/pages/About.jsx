@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faHandshake, faLightbulb, faHeart, faTrophy, faGlobe, faLaptop, faFlask, faBook, faFutbol, faTheaterMasks, faBus, faBullseye, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap, faHandshake, faLightbulb, faHeart, faTrophy, faGlobe, faLaptop, faFlask, faBook, faFutbol, faTheaterMasks, faBus, faBullseye, faEye, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import CTA from '../components/CTA';
 
 const About = () => {
@@ -147,6 +147,44 @@ const About = () => {
                 </div>
             </section>
 
+            {/* Our Management Section */}
+            <section className="py-12 sm:py-16 lg:py-20 bg-cream">
+                <div className="max-w-[1140px] mx-auto px-4">
+                    {/* Section Header */}
+                    <div className="text-center mb-8">
+                        <h2 className="text-gold text-xs sm:text-sm font-semibold uppercase tracking-wide mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            Leadership Excellence
+                        </h2>
+                        <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary mb-4" style={{ fontFamily: 'Noto Serif, serif' }}>
+                            Our Management
+                        </h3>
+                        <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            Guided by visionary leaders committed to educational excellence and student success.
+                        </p>
+                    </div>
+
+                    {/* Large Banner Image */}
+                    <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
+                        <img
+                            src="/infrastructure.png"
+                            alt="Aditya High School Management Team"
+                            className="w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/20 to-transparent flex items-end p-6 sm:p-8 lg:p-12">
+                            <div className="text-white">
+                                <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: 'Noto Serif, serif' }}>
+                                    Committed to Excellence
+                                </h4>
+                                <p className="text-sm sm:text-base lg:text-lg opacity-90 max-w-2xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Our management team brings decades of combined experience in education, ensuring the highest standards of academic and personal development for every student.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Mission & Vision Section */}
             <section className="py-12 sm:py-16 lg:py-20 bg-cream">
                 <div className="max-w-[1140px] mx-auto px-4">
@@ -212,6 +250,133 @@ const About = () => {
                                 </p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Our Team Section */}
+            <section className="py-12 sm:py-16 lg:py-20 bg-white">
+                <div className="max-w-[1140px] mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-gold text-xs sm:text-sm font-semibold uppercase tracking-wide mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            Meet Our Team
+                        </h2>
+                        <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-primary mb-4" style={{ fontFamily: 'Noto Serif, serif' }}>
+                            Dedicated Faculty Members
+                        </h3>
+                        <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            Our experienced and passionate educators are committed to nurturing every student's potential and guiding them towards excellence.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {/* Staff Member 1 */}
+                        <div className="group">
+                            <div className="relative overflow-hidden rounded-2xl shadow-lg mb-4 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                                <img
+                                    src="/staff1.png"
+                                    alt="Mrs. Priya Sharma - Head of Academics"
+                                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div className="text-white">
+                                        <FontAwesomeIcon icon={faUserTie} className="text-2xl mb-2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="text-center">
+                                <h4 className="text-xl font-bold text-primary mb-1 transition-colors duration-300 group-hover:text-gold" style={{ fontFamily: 'Noto Serif, serif' }}>
+                                    Mrs. Priya Sharma
+                                </h4>
+                                <p className="text-sm text-gray-600 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Head of Academics
+                                </p>
+                                <p className="text-xs text-gray-500" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    M.Ed, 15+ years experience
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Staff Member 2 */}
+                        <div className="group">
+                            <div className="relative overflow-hidden rounded-2xl shadow-lg mb-4 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                                <img
+                                    src="/infrastructure.png"
+                                    alt="Mr. Rajesh Kumar - Science Department Head"
+                                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div className="text-white">
+                                        <FontAwesomeIcon icon={faUserTie} className="text-2xl mb-2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="text-center">
+                                <h4 className="text-xl font-bold text-primary mb-1 transition-colors duration-300 group-hover:text-gold" style={{ fontFamily: 'Noto Serif, serif' }}>
+                                    Mr. Rajesh Kumar
+                                </h4>
+                                <p className="text-sm text-gray-600 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Science Department Head
+                                </p>
+                                <p className="text-xs text-gray-500" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    M.Sc, Ph.D, 12+ years experience
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Staff Member 3 */}
+                        <div className="group">
+                            <div className="relative overflow-hidden rounded-2xl shadow-lg mb-4 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                                <img
+                                    src="/about.png"
+                                    alt="Dr. Anjali Reddy - Mathematics Coordinator"
+                                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div className="text-white">
+                                        <FontAwesomeIcon icon={faUserTie} className="text-2xl mb-2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="text-center">
+                                <h4 className="text-xl font-bold text-primary mb-1 transition-colors duration-300 group-hover:text-gold" style={{ fontFamily: 'Noto Serif, serif' }}>
+                                    Dr. Anjali Reddy
+                                </h4>
+                                <p className="text-sm text-gray-600 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Mathematics Coordinator
+                                </p>
+                                <p className="text-xs text-gray-500" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Ph.D Mathematics, 10+ years
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Staff Member 4 */}
+                        <div className="group">
+                            <div className="relative overflow-hidden rounded-2xl shadow-lg mb-4 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                                <img
+                                    src="/infrastructure.png"
+                                    alt="Mr. Suresh Patel - Sports & Activities Director"
+                                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                    <div className="text-white">
+                                        <FontAwesomeIcon icon={faUserTie} className="text-2xl mb-2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="text-center">
+                                <h4 className="text-xl font-bold text-primary mb-1 transition-colors duration-300 group-hover:text-gold" style={{ fontFamily: 'Noto Serif, serif' }}>
+                                    Mr. Suresh Patel
+                                </h4>
+                                <p className="text-sm text-gray-600 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    Sports & Activities Director
+                                </p>
+                                <p className="text-xs text-gray-500" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                    B.P.Ed, M.P.Ed, 14+ years
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
