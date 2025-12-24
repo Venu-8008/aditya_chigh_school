@@ -3,30 +3,31 @@ import React, { useState, useRef } from 'react';
 const Achievements = () => {
     const [selectedYear, setSelectedYear] = useState(null);
 
-    const achievementCategories = [
-        {
-            link: '#academic',
-            text: '1994',
-            image: '/academic_achievements.png'
-        },
-        {
-            link: '#sports',
-            text: '1995',
-            image: '/sports_achievements.png'
-        },
-        {
-            link: '#cultural',
-            text: '1996',
-            image: '/cultural_achievements.png'
-        },
-        {
-            link: '#leadership',
-            text: '1997',
-            image: '/leadership_achievements.png'
-        },
-    ];
+    const startYear = 1990;
+    const endYear = 2026;
+    const years = Array.from({ length: endYear - startYear + 1 }, (_, i) => (startYear + i).toString());
 
-    const achievementData = {
+    const achievementCategories = years.map(year => ({
+        link: `#year-${year}`,
+        text: year,
+        image: `/achievements_${year}.png`
+    }));
+
+    const genericData = {
+        title: 'Excellence in Education',
+        description: 'A year of significant growth and academic achievement, fostering a culture of holistic development and innovation.',
+        highlights: [
+            'Achieved 100% results in board examinations',
+            'Expanded digital learning infrastructure',
+            'Won multiple district-level sports competitions',
+            'Successfully organized annual cultural fest',
+            'Enhanced student-led leadership initiatives',
+            'Strengthened community outreach programs'
+        ],
+        image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop'
+    };
+
+    const specificAchievements = {
         '1994': {
             title: 'Academic Excellence - 1994',
             description: 'In 1994, Aditya High School marked its establishment year with remarkable achievements in academics and infrastructure development.',
@@ -51,7 +52,7 @@ const Achievements = () => {
                 'Hosted inter-school sports tournament',
                 'Achieved recognition as Sports Excellence School'
             ],
-            image: '/sports_achievements.png'
+            image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop'
         },
         '1996': {
             title: 'Cultural Arts - 1996',
@@ -64,21 +65,68 @@ const Achievements = () => {
                 'Students performed at national events',
                 'Established art gallery and exhibition hall'
             ],
-            image: '/cultural_achievements.png'
+            image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop'
         },
         '1997': {
             title: 'Leadership & Service - 1997',
             description: 'Students demonstrated exceptional leadership qualities through various community service initiatives and student council activities.',
             highlights: [
-                'Launched community outreach programs',
+                'Launch of community outreach programs',
                 'Established student leadership council',
                 'Organized blood donation camps',
                 'Initiated environmental awareness campaigns',
                 'Won Best Student Council Award',
                 'Conducted free education programs for underprivileged'
             ],
-            image: '/leadership_achievements.png'
+            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop'
+        },
+        '2024': {
+            title: 'Digital Innovation Milestone - 2024',
+            description: 'A transformative year focusing on AI-integrated learning and modernizing our global connectivity.',
+            highlights: [
+                'Implemented AI-driven personalized learning paths',
+                'State-of-the-art STEM innovation lab inaugurated',
+                'National rank in Robotics competition',
+                '100% digital classroom transition completed',
+                'Global partnership with international schools',
+                'Sustainable green campus certification'
+            ],
+            image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2104&auto=format&fit=crop'
+        },
+        '2025': {
+            title: 'Future Leaders Program - 2025',
+            description: 'Empowering students with 21st-century skills and leadership opportunities on a global stage.',
+            highlights: [
+                'Launched Global Leadership Exchange program',
+                'New multi-purpose auditorium completed',
+                'Record-breaking university admissions',
+                'Innovation excellence award from state government',
+                'Expansion of sports complex with Olympic-grade track',
+                'Successfully hosted National Student Summit'
+            ],
+            image: 'https://images.unsplash.com/photo-1541339900282-1717514652e0?q=80&w=2070&auto=format&fit=crop'
+        },
+        '2026': {
+            title: 'Excellence Reimagined - 2026',
+            description: 'Continuing our legacy of excellence with renewed vigor and cutting-edge educational breakthroughs.',
+            highlights: [
+                'Celebration of decades of academic supremacy',
+                'Launch of specialized career-readiness modules',
+                'Excellence in research and development initiatives',
+                'Modernized residential facilities for boarding students',
+                'Pioneering virtual reality labs for intricate subjects',
+                'Ranked #1 School in the Region for Holistic Development'
+            ],
+            image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop'
         }
+    };
+
+    const getAchievementData = (year) => {
+        return specificAchievements[year] || {
+            ...genericData,
+            title: `Excellence in Education - ${year}`,
+            image: `https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop`
+        };
     };
 
     const handleYearClick = (year) => {
@@ -179,13 +227,13 @@ const Achievements = () => {
                                                     Year {category.text}
                                                 </h3>
                                                 <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-primary mb-4 sm:mb-6 font-normal" style={{ fontFamily: 'Noto Serif, serif' }}>
-                                                    {achievementData[category.text].title}
+                                                    {getAchievementData(category.text).title}
                                                 </h2>
                                                 <p className="text-gray-700 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                                                    {achievementData[category.text].description}
+                                                    {getAchievementData(category.text).description}
                                                 </p>
                                                 <ul className="space-y-3 sm:space-y-4">
-                                                    {achievementData[category.text].highlights.map((highlight, idx) => (
+                                                    {getAchievementData(category.text).highlights.map((highlight, idx) => (
                                                         <li key={idx} className="flex items-start text-gray-700 text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                                             <span className="text-primary mr-3 text-lg sm:text-xl flex-shrink-0">✓</span>
                                                             <span>{highlight}</span>
@@ -200,8 +248,8 @@ const Achievements = () => {
                                             }}>
                                                 <div className="overflow-hidden rounded-lg shadow-2xl">
                                                     <img
-                                                        src={achievementData[category.text].image}
-                                                        alt={achievementData[category.text].title}
+                                                        src={getAchievementData(category.text).image}
+                                                        alt={getAchievementData(category.text).title}
                                                         className="w-full h-64 sm:h-80 lg:h-[400px] object-cover transition-transform duration-700 hover:scale-110"
                                                     />
                                                 </div>
